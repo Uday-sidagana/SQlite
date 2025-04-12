@@ -13,7 +13,7 @@ emp3 = Employee('ketchup', 'man', 9999)
 
 # c.execute(" INSERT INTO employees VALUES ('{}','{}',{})".format(emp1.first, emp1.last, emp1.pay)) 
 # c.execute(" INSERT INTO employees VALUES (?,?,?)", (emp2.first, emp2.last, emp2.pay))
-c.execute(" INSERT INTO employees VALUES (:first, :last, :pay)", {'first':emp3.first, 'last': emp3.last, 'pay': emp3.pay})
+# c.execute(" INSERT INTO employees VALUES (:first, :last, :pay)", {'first':emp3.first, 'last': emp3.last, 'pay': emp3.pay})
 
 # c.execute(""" CREATE TABLE employees (
 #           first text,
@@ -25,12 +25,15 @@ c.execute(" INSERT INTO employees VALUES (:first, :last, :pay)", {'first':emp3.f
 # c.execute(" INSERT INTO employees VALUES ('sam', 'lmao', 3000) ")
 # c.execute(" INSERT INTO employees VALUES ('jakarta', 'sidagana', 5000) ")
 
-c.execute(" SELECT * FROM employees WHERE last='sidagana' ")
+c.execute(" SELECT * FROM employees WHERE last=?", ('sidagana',))
+print(c.fetchall())
 
+c.execute(" SELECT * FROM employees WHERE last=:last", {'last': 'man'})
+print(c.fetchall())
 # c.fetchall()
 # c.fetchone()
 # c.fetchmany(5)
-print(c.fetchall())
+
 
 conn.commit()
 conn.close()
