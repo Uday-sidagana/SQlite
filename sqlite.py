@@ -11,3 +11,5 @@ c.execute(""" CREATE TABLE employees (
           pay integer)     
            """)
 
+conn.commit()
+conn.close()
