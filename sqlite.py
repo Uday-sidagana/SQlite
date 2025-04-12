@@ -12,9 +12,10 @@ c= conn.cursor()
 #            """)
 
 # c.execute(" INSERT INTO employees VALUES ('uday', 'sidagana', 5000) ")
-c.execute(" INSERT INTO employees VALUES ('sam', 'lmao', 3000) ")
+# c.execute(" INSERT INTO employees VALUES ('sam', 'lmao', 3000) ")
+# c.execute(" INSERT INTO employees VALUES ('jakarta', 'sidagana', 5000) ")
 
-c.execute(" SELECT * FROM employees WHERE first='uday' ")
+c.execute(" SELECT * FROM employees WHERE last='sidagana' ")
 
 # c.fetchall()
 # c.fetchone()
