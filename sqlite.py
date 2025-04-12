@@ -10,9 +10,7 @@ c= conn.cursor()
 emp1 = Employee('sumit', 'shukla', 1500)
 emp2 = Employee('aditya', 'dikhit', 10)
 
-print(emp1.first)
-print(emp1.last)
-print(emp1.pay)
+# c.execute(" INSERT INTO employees VALUES ('{}','{}',{})".format(emp1.first, emp1.last, emp1.pay)) 
 
 
 # c.execute(""" CREATE TABLE employees (
