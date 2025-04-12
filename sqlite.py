@@ -13,12 +13,12 @@ c= conn.cursor()
 
 # c.execute(" INSERT INTO employees VALUES ('uday', 'sidagana', 5000) ")
 
-c.execute(" SELECT * FROM employees WHERE last='uday' ")
+c.execute(" SELECT * FROM employees WHERE first='uday' ")
 
 # c.fetchall()
 # c.fetchone()
 # c.fetchmany(5)
-c.fetchone()
+print(c.fetchone())
 
 conn.commit()
 conn.close()
