@@ -18,6 +18,7 @@ c.execute(" SELECT * FROM employees WHERE last='uday' ")
 # c.fetchall()
 # c.fetchone()
 # c.fetchmany(5)
+c.fetchone()
 
 conn.commit()
 conn.close()
