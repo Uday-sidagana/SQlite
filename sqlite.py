@@ -1,9 +1,19 @@
 import sqlite3
+from employee import Employee
 
 # conn = sqlite3.connect(':memory:')
 conn = sqlite3.connect('employee.db')
 
 c= conn.cursor()
+
+#from employee module
+emp1 = Employee('sumit', 'shukla', 1500)
+emp2 = Employee('aditya', 'dikhit', 10)
+
+print(emp1.first)
+print(emp1.last)
+print(emp1.pay)
+
 
 # c.execute(""" CREATE TABLE employees (
 #           first text,
