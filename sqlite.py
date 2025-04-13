@@ -17,9 +17,9 @@ def fetch_emp(param, value):
 
 def update_pay(emp, pay):
     with conn:
-        c.execute(""" UPDATE employees SET pay=:pay
+        c.execute(f""" UPDATE employees SET pay=:pay
                        WHERE first=:first AND last=:last""",
-                        {'first': emp.first, 'last':emp.last})
+                        {'first': emp.first, 'last':emp.last, 'pay': pay})
         
 def delete_emp(emp):
     with conn:
@@ -41,6 +41,13 @@ emp3 = Employee('ketchup', 'man', 9999)
 insert_emp(emp1)
 insert_emp(emp2)
 insert_emp(emp3)
+print(fetch_emp(param='last', value= 'man'))
+
+
+update_pay(emp=emp1, pay=2000)
+print(fetch_emp(param='last', value= 'man'))
+
+delete_emp(emp=emp3)
 
 print(fetch_emp(param='last', value= 'man'))
 
