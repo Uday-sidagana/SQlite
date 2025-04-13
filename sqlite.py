@@ -20,6 +20,11 @@ def update_pay(emp, pay):
         c.execute(""" UPDATE employees SET pay=:pay
                        WHERE first=:first AND last=:last""",
                         {'first': emp.first, 'last':emp.last})
+        
+def delete_emp(emp):
+    with conn:
+        c.execute(" DELETE from employees WHERE first=:first AND last=:last",
+                    {'first':emp.first, 'last': emp.last, 'pay': emp.pay})        
 
 c.execute(""" CREATE TABLE employees (
           first text,
