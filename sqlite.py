@@ -15,6 +15,11 @@ def fetch_emp(param, value):
         c.execute(" SELECT * FROM employees WHERE param=:param", {'param': 'value'})
         return c.fetchall()
 
+def update_pay(emp, pay):
+    with conn:
+        c.execute(""" UPDATE employees SET pay=:pay
+                       WHERE first=:first AND last=:last""",
+                        {'first': emp.first, 'last':emp.last})
 
 c.execute(""" CREATE TABLE employees (
           first text,
